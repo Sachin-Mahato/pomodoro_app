@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url(./variables.css);
+
+body {
+  background-color: hsl(236, 36%, 18%);
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+  min-height: 100dvh;
+}
+
+.hero__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(214, 223, 255, 0.4);
+  background-color: hsl(234, 39%, 14%);
+  padding-block: 1em;
+  padding-inline: 2.5em;
+  border-radius: 50px;
+}
+/* Pomodoro timer circle */
+.circle {
+  color: rgb(214, 223, 255);
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(234, 39%, 14%);
+}
+
+.circle__inner {
+  border-color: hsl(0, 91%, 81%);
+  border-width: 10px;
+  border-style: solid;
+  width: 87%;
+  height: 87%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.circle__time {
+  font-size: 4rem;
+}
+.circle__title {
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: hsl(234, 39%, 14%);
+  letter-spacing: 10px;
+  border: none;
+  outline: none;
+  color: rgb(214, 223, 255);
+}
