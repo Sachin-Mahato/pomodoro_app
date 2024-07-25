@@ -76,3 +76,8 @@ body {
   outline: none;
   color: rgb(214, 223, 255);
 }
+/* pomodoro settings */
+
+.pomodoro__settings {
+  display: block;
+}
