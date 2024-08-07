@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
-@import url(./variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto+Slab:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
   background-color: hsl(236, 36%, 18%);
@@ -79,5 +80,199 @@ body {
 /* pomodoro settings */
 
 .pomodoro__settings {
-  display: block;
+  background-color: white;
+  border-radius: 20px;
+  padding-inline: 2em;
+  padding-block: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-block-end: 1em;
+}
+
+.pomodoro__settings-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pomodoro__settings-title {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: hsl(235, 35%, 18%);
+}
+.pomodoro__settings-icon {
+  color: hsl(235, 35%, 18%);
+  font-weight: 700;
+}
+
+.border-orange {
+  border-color: hsl(0, 91%, 81%);
+}
+
+.border-cyan {
+  border-color: #70F3F8;
+}
+
+.border-pink {
+  border-color: #D881F8;
+}
+
+/* settings modify details */
+
+.settings__details {
+  border-top: 1px solid hsl(229, 52%, 96%); 
+}
+
+.settings__modify {
+  display: flex;
+  gap: 1em;
+}
+
+.settings__modify-text {
+  color: hsl(234, 39%, 14%);
+  font-weight: 400;
+  font-size: 0.7rem;
+  margin-block-end: 0.5em;
+  
+}
+
+.settings__modify-pomodoro input[type="number"], .settings__modify-short-break input[type="number"], .settings__modify-long-break input[type="number"] {
+  background-color:hsl(227, 100%, 92%);
+  width: 6rem;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+
+  outline: 1px solid hsl(182, 91%, 71%);
+  border-radius: 5px;
+  font-weight: 600;
+  
+}
+
+.settings__time {
+  text-transform: uppercase;
+  color: hsl(235, 35%, 18%);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-block-start: 1.5em;
+  margin-block-end: 2em;
+}
+.settings__time > p{
+  letter-spacing: 3px;
+  margin-block-end: 1em;
+}
+/* fonts */
+.settings__fonts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  border-top: 1px solid hsl(227, 100%, 92%);
+  padding-block: 1em;
+  border-bottom: 1px solid hsl(227, 100%, 92%);
+}
+.settings__font-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: hsl(235, 35%, 18%);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.settings__font-type{
+  display: flex;
+  gap: 0.5em;
+}
+
+.settings__fonts-default, .settings__fonts-slab, .settings__fonts-mono {
+  width: 35px;
+  height: 35px;
+  background-color: hsl(227, 100%, 92%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.settings__fonts-default {
+  cursor: pointer;
+}
+.settings__fonts-slab {
+  font-family: 'Roboto slab', serif;
+  cursor: pointer;
+}
+.settings__fonts-mono {
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+}
+.default {
+  font-family: "Kumbh Sans", sans-serif;
+}
+.slab {
+  font-family: 'Roboto slab', serif;
+}
+.mono {
+  font-family: "Space Mono", monospace;
+}
+.cover {
+  background-color: hsl(234, 39%, 14%);
+  color: white;
+}
+/* color */
+.settings__color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(235, 35%, 18%);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-block-start: 1em;
+  position: relative;
+}
+
+.checkbox{ 
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+  appearance: none;
+}
+.orange {
+  background-color: hsl(0, 91%, 81%);
+}
+
+.cyan {
+  background-color: #70F3F8;
+}
+
+.pink {
+  background-color: #D881F8;
+}
+
+
+
+/* Apply button */
+.btn__apply {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  width: 130px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: hsl(0,91%,81%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  border-radius: 20px;
+  position: relative;
+  top: 30px;
+  margin-inline: auto;
+  cursor: pointer;
+}
+.checked {
+  background-image: url('../img/icon-check.svg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center; 
 }
