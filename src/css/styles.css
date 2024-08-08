@@ -28,7 +28,7 @@ body {
   color: rgba(214, 223, 255, 0.4);
   background-color: hsl(234, 39%, 14%);
   padding-block: 1em;
-  padding-inline: 2.5em;
+  padding-inline: 1.5em;
   border-radius: 50px;
 }
 /* Switch  */
@@ -37,7 +37,6 @@ body {
   color: hsl(234, 39%, 14%);
   border-radius: 25px;
   padding-inline: 0.8em;
-  padding-block: 1em;
 }
 /* Pomodoro timer circle */
 .circle {
@@ -52,7 +51,7 @@ body {
 }
 
 .circle__inner {
-  border-color: hsl(0, 91%, 81%);
+  border-color: hsl(0, 91%, 71%);
   border-width: 10px;
   border-style: solid;
   width: 87%;
@@ -84,10 +83,16 @@ body {
   border-radius: 20px;
   padding-inline: 2em;
   padding-block: 1.5em;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 1em;
   margin-block-end: 1em;
+}
+.flex {
+  display: flex;
+  position: absolute;
+  top: 100px;
+  
 }
 
 .pomodoro__settings-con {
@@ -101,21 +106,22 @@ body {
   font-weight: 600;
   color: hsl(235, 35%, 18%);
 }
-.pomodoro__settings-icon {
+.pomodoro__settings_cross {
   color: hsl(235, 35%, 18%);
   font-weight: 700;
+  cursor: pointer;
 }
 
 .border-orange {
-  border-color: hsl(0, 91%, 81%);
+  border-color: hsl(0, 91%, 71%);
 }
 
 .border-cyan {
-  border-color: #70F3F8;
+  border-color: hsl(182, 91%, 71%);
 }
 
 .border-pink {
-  border-color: #D881F8;
+  border-color: hsl(284, 89%, 74%);
 }
 
 /* settings modify details */
@@ -240,15 +246,15 @@ body {
   appearance: none;
 }
 .orange {
-  background-color: hsl(0, 91%, 81%);
+  background-color: hsl(0, 91%, 71%);
 }
 
 .cyan {
-  background-color: #70F3F8;
+  background-color: hsl(182, 91%, 71%);
 }
 
 .pink {
-  background-color: #D881F8;
+  background-color: hsl(284, 89%, 74%);
 }
 
 
@@ -261,7 +267,7 @@ body {
   height: 40px;
   border: none;
   outline: none;
-  background-color: hsl(0,91%,81%);
+  background-color: hsl(0,91%,71%);
   color: hsl(0, 0%, 100%);
   font-weight: 700;
   border-radius: 20px;

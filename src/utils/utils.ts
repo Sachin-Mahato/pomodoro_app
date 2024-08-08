@@ -118,4 +118,36 @@ function longBreakClickHandler(value: string) {
   })
 }
 
-export {pink, cyan, orange, defaultFont, monoFont, slabFont, sessionClickHandler, longBreakClickHandler, shortBreakClickHandler}
+
+function settingsClickHandler(e: MouseEvent) {
+  const target = e.target as HTMLElement;
+  const applyButton = document.body.querySelector('[data-id="apply__btn"]');
+
+  applyButton?.addEventListener("click", () => {
+
+    if (target.classList.contains("cyan")) {
+      cyan();
+    } else if (target.classList.contains("pink")) {
+      pink();
+    } else if (target.classList.contains("orange")) {
+      orange();
+    } else if (target.classList.contains("first")) {
+      defaultFont()
+    } else if (target.classList.contains("second")) {
+      slabFont()
+    } else if (target.classList.contains("third")) {
+      monoFont()
+    } else if (target.classList.contains("pomodoro__session")) {
+      const value = (target as HTMLInputElement).value;
+      sessionClickHandler(value)
+    } else if (target.classList.contains("pomodoro__short-break"))  {
+      const value = (target as HTMLInputElement).value;
+      shortBreakClickHandler(value)
+    } else if (target.classList.contains("pomodoro__long-break")) {
+      const value = (target as HTMLInputElement).value;
+      longBreakClickHandler(value)
+    }
+    
+  });
+}
+export {pink, cyan, orange, defaultFont, monoFont, slabFont, sessionClickHandler, longBreakClickHandler, shortBreakClickHandler, settingsClickHandler}
