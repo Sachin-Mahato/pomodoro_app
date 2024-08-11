@@ -37,7 +37,7 @@ const orange = (): void => {
   pinkCheckbox?.classList.remove("checked");
 };
 
-const defaultFont = ():void => {
+const defaultFont = (): void => {
   const body = document.body;
   const defaultFont = body.querySelector(".settings__fonts-default");
   const slabFont = body.querySelector(".settings__fonts-slab");
@@ -77,8 +77,8 @@ const monoFont = (): void => {
   defaultFont?.classList.remove("cover");
 };
 
-function sessionClickHandler(value: string)  {
-  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]'); 
+function sessionClickHandler(value: string): void {
+  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
   const pomodoroSession: HTMLElement | null = document.body.querySelector('[data-id="pomodoro"]')
   pomodoroSession?.addEventListener("click", () => {
     if (timer) {
@@ -90,8 +90,8 @@ function sessionClickHandler(value: string)  {
 
 }
 
-function shortBreakClickHandler(value: string) {
-  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]'); 
+function shortBreakClickHandler(value: string ): void {
+  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
   const shortBreak: HTMLElement | null = document.body.querySelector('[data-id="short__break"]')
 
   shortBreak?.addEventListener("click", () => {
@@ -104,9 +104,9 @@ function shortBreakClickHandler(value: string) {
 
 }
 
-function longBreakClickHandler(value: string) {
+function longBreakClickHandler(value: string ): void {
 
-  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]'); 
+  let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
   const longBreak: HTMLElement | null = document.body.querySelector('[data-id="long__break"]')
 
   longBreak?.addEventListener("click", () => {
@@ -118,8 +118,40 @@ function longBreakClickHandler(value: string) {
   })
 }
 
+function selectSession(target: HTMLElement) {
+    const pomodoro = document.body.querySelector('[data-id="pomodoro"]');
+    const shortBreak = document.body.querySelector('[data-id="short__break"]');
+    const longBreak = document.body.querySelector('[data-id="long__break"]')
+    const session = document.body.querySelector('[data-id="timer"]');
 
-function settingsClickHandler(e: MouseEvent) {
+    if (target.dataset.id?.includes("short__break")) {
+      if (session) {
+        session.textContent = "5:00"
+      }
+      shortBreak?.classList.add("bg__color")
+      pomodoro?.classList.remove("bg__color")
+      longBreak?.classList.remove("bg__color")
+    }
+
+    else if (target.dataset.id?.includes("long__break")) {
+      if (session) {
+        session.textContent = "15:00"
+      }
+      longBreak?.classList.add("bg__color")
+      shortBreak?.classList.remove("bg__color")
+      pomodoro?.classList.remove("bg__color")
+    } else {
+      if (session) {
+        session.textContent = "25:00"
+      }
+      pomodoro?.classList.add("bg__color")
+      longBreak?.classList.remove("bg__color")
+      shortBreak?.classList.remove("bg__color")
+    }
+}
+
+
+function settingsClickHandler(e: MouseEvent): void {
   const target = e.target as HTMLElement;
   const applyButton = document.body.querySelector('[data-id="apply__btn"]');
 
@@ -140,14 +172,15 @@ function settingsClickHandler(e: MouseEvent) {
     } else if (target.classList.contains("pomodoro__session")) {
       const value = (target as HTMLInputElement).value;
       sessionClickHandler(value)
-    } else if (target.classList.contains("pomodoro__short-break"))  {
+    } else if (target.classList.contains("pomodoro__short-break")) {
       const value = (target as HTMLInputElement).value;
       shortBreakClickHandler(value)
     } else if (target.classList.contains("pomodoro__long-break")) {
       const value = (target as HTMLInputElement).value;
       longBreakClickHandler(value)
     }
-    
+
   });
 }
-export {pink, cyan, orange, defaultFont, monoFont, slabFont, sessionClickHandler, longBreakClickHandler, shortBreakClickHandler, settingsClickHandler}
+
+export { settingsClickHandler, selectSession }

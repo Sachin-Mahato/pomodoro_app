@@ -26,14 +26,13 @@
       </div>
       <!-- pomodoro specification -->
       <section class="hero__section" data-id="hero__section">
-        <div data-id="pomodoro" >
+        <div data-id="pomodoro" class="session bg__color" >
           <h2>pomodoro</h2>
         </div>
-        <div data-id="short__break"  >
-
-          <h2 >short break</h2>
+        <div data-id="short__break"  class="session">
+          <h2>short break</h2>
         </div>
-        <div data-id="long__break" >
+        <div data-id="long__break" class="session">
 
           <h2>long break</h2>
         </div>
@@ -41,7 +40,10 @@
       <section class="circle">
         <div class="circle__inner" data-id="inner">
           <div class="circle__time" data-id="timer">25:00</div>
+          <audio class="myAudio"  src="./src/audio/alert.mp3">
+          </audio>
           <button class="circle__title" type="button" data-id="start__btn">start</button>
+          <button type="button" class="circle__title block-btn" data-id="stop__btn">pause</button>
         </div>
       </section>
       <!-- settings icon -->
@@ -62,15 +64,15 @@
               
               <div class="settings__modify-pomodoro">
                 <p class="settings__modify-text">pomodoro</p>
-              <input type="number" min="25" value="25" class="pomodoro__session">
+              <input type="number" min="25" value="25" class="pomodoro__session" data-id="input">
             </div>
             <div class="settings__modify-short-break">
               <p class="settings__modify-text">short break</p>
-              <input type="number" min="5" value="5" class="pomodoro__short-break" >
+              <input type="number" min="5" value="5" class="pomodoro__short-break" data-id="input">
             </div>
             <div class="settings__modify-long-break">
               <p class="settings__modify-text" >long break</p>
-              <input type="number" min="15" value="15" class="pomodoro__long-break" >
+              <input type="number" min="15" value="15" class="pomodoro__long-break" data-id="input">
             </div>
             </div>
           </div>
