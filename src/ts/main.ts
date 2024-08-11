@@ -3,7 +3,6 @@ const buttons: NodeListOf<Element> = document.body.querySelectorAll('.session');
 const settings: HTMLElement | null = document.body.querySelector('[data-id="settings"]');
 const settingsIcon: HTMLElement | null = document.body.querySelector('[data-id="settings__icon"]');
 const crossIcon: HTMLElement | null = document.body.querySelector('[data-id="cross"]');
-//const container: HTMLElement | null = document.body.querySelector('.container');
 const startBtn = document.body.querySelector('[data-id="start__btn"]');
 const pauseBtn = document.body.querySelector('[data-id="stop__btn"]');
 let countDown: number | undefined;
@@ -13,10 +12,10 @@ let seconds: number;
 
 
 function start() {
-  if(!isRunning) {
+  if (!isRunning) {
     isRunning = true;
 
-    const timerElement = document.body.querySelector('[data-id="timer"]');
+    const timerElement: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
     if (timerElement) {
       const timeText = timerElement.innerText.trim(); // Get and trim the text content
       const [initialMinutes, initialSeconds] = timeText.split(':').map(Number); // Split and convert to numbers
@@ -27,10 +26,11 @@ function start() {
       minutes = 25;
       seconds = 0;
     }
+
     countDown = setInterval(updateCountDown, 1000);
   }
 }
-function stop (){
+function stop() {
   isRunning = false;
   if (countDown !== undefined) {
     clearInterval(countDown)
@@ -38,7 +38,7 @@ function stop (){
 }
 
 
-function updateCountDown () { 
+function updateCountDown() {
   let timer = document.body.querySelector('[data-id="timer"]');
   const soundEffect: HTMLAudioElement | null = document.body.querySelector('.myAudio');
 
@@ -69,6 +69,7 @@ startBtn?.addEventListener("click", () => {
   startBtn.classList.add("block-btn");
   pauseBtn?.classList.remove("block-btn");
 })
+
 pauseBtn?.addEventListener("click", () => {
   stop()
   pauseBtn.classList.add("block-btn");
@@ -82,6 +83,7 @@ buttons?.forEach((btn) => {
     selectSession(target)
   });
 });
+
 
 settingsIcon?.addEventListener("click", () => {
   settings?.classList.add("flex")

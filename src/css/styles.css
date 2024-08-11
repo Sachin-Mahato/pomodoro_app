@@ -240,7 +240,7 @@ body {
   position: relative;
 }
 
-.checkbox{ 
+#checkbox{ 
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -250,15 +250,15 @@ body {
   appearance: none;
 }
 .orange {
-  background-color: hsl(0, 91%, 71%);
+  background-color: hsl(0, 91%, 71%) !important;
 }
 
 .cyan {
-  background-color: hsl(182, 91%, 71%);
+  background-color: hsl(182, 91%, 71%) !important;
 }
 
 .pink {
-  background-color: hsl(284, 89%, 74%);
+  background-color: hsl(284, 89%, 74%) !important   ;
 }
 
 

@@ -3,9 +3,14 @@ const cyan = (): void => {
   const orangeCheckbox = document.body.querySelector(".orange");
   const pinkCheckbox = document.body.querySelector(".pink");
   const cyanCheckbox = document.body.querySelector(".cyan");
+  const applyButton = document.body.querySelector('[data-id="apply__btn"]')
+  console.log(applyButton)
   innerCircle?.classList.add("border-cyan");
   innerCircle?.classList.remove("border-orange");
   innerCircle?.classList.remove("border-pink");
+  applyButton?.classList.add("cyan")
+  applyButton?.classList.remove("orange")
+  applyButton?.classList.remove("pink")
   orangeCheckbox?.classList.remove("checked");
   pinkCheckbox?.classList.remove("checked");
   cyanCheckbox?.classList.add("checked");
@@ -16,12 +21,16 @@ const pink = (): void => {
   const orangeCheckbox = document.body.querySelector(".orange");
   const pinkCheckbox = document.body.querySelector(".pink");
   const cyanCheckbox = document.body.querySelector(".cyan");
+  const applyButton = document.body.querySelector('[data-id="apply__btn"]')
   innerCircle?.classList.add("border-pink");
   innerCircle?.classList.remove("border-cyan");
   innerCircle?.classList.remove("border-orange");
   pinkCheckbox?.classList.add("checked");
   cyanCheckbox?.classList.remove("checked");
   orangeCheckbox?.classList.remove("checked");
+  applyButton?.classList.add("pink")
+  applyButton?.classList.remove("orange")
+  applyButton?.classList.add("cyan")
 };
 
 const orange = (): void => {
@@ -29,12 +38,16 @@ const orange = (): void => {
   const orangeCheckbox = document.body.querySelector(".orange");
   const pinkCheckbox = document.body.querySelector(".pink");
   const cyanCheckbox = document.body.querySelector(".cyan");
+  const applyButton = document.body.querySelector('[data-id="apply__btn"]')
   innerCircle?.classList.add("border-orange");
   innerCircle?.classList.remove("border-cyan");
   innerCircle?.classList.remove("border-pink");
   orangeCheckbox?.classList.add("checked");
   cyanCheckbox?.classList.remove("checked");
   pinkCheckbox?.classList.remove("checked");
+  applyButton?.classList.add("orange")
+  applyButton?.classList.remove("cyan")
+  applyButton?.classList.add("pink")
 };
 
 const defaultFont = (): void => {
@@ -90,7 +103,7 @@ function sessionClickHandler(value: string): void {
 
 }
 
-function shortBreakClickHandler(value: string ): void {
+function shortBreakClickHandler(value: string): void {
   let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
   const shortBreak: HTMLElement | null = document.body.querySelector('[data-id="short__break"]')
 
@@ -104,7 +117,7 @@ function shortBreakClickHandler(value: string ): void {
 
 }
 
-function longBreakClickHandler(value: string ): void {
+function longBreakClickHandler(value: string): void {
 
   let timer: HTMLElement | null = document.body.querySelector('[data-id="timer"]');
   const longBreak: HTMLElement | null = document.body.querySelector('[data-id="long__break"]')
@@ -119,35 +132,34 @@ function longBreakClickHandler(value: string ): void {
 }
 
 function selectSession(target: HTMLElement) {
-    const pomodoro = document.body.querySelector('[data-id="pomodoro"]');
-    const shortBreak = document.body.querySelector('[data-id="short__break"]');
-    const longBreak = document.body.querySelector('[data-id="long__break"]')
-    const session = document.body.querySelector('[data-id="timer"]');
-
-    if (target.dataset.id?.includes("short__break")) {
-      if (session) {
-        session.textContent = "5:00"
-      }
-      shortBreak?.classList.add("bg__color")
-      pomodoro?.classList.remove("bg__color")
-      longBreak?.classList.remove("bg__color")
+  const pomodoro = document.body.querySelector('[data-id="pomodoro"]');
+  const shortBreak = document.body.querySelector('[data-id="short__break"]');
+  const longBreak = document.body.querySelector('[data-id="long__break"]')
+  const session = document.body.querySelector('[data-id="timer"]');
+  if (target.dataset.id?.includes("short__break")) {
+    if (session) {
+      session.textContent = "5:00"
     }
+    shortBreak?.classList.add("bg__color")
+    pomodoro?.classList.remove("bg__color")
+    longBreak?.classList.remove("bg__color")
+  }
 
-    else if (target.dataset.id?.includes("long__break")) {
-      if (session) {
-        session.textContent = "15:00"
-      }
-      longBreak?.classList.add("bg__color")
-      shortBreak?.classList.remove("bg__color")
-      pomodoro?.classList.remove("bg__color")
-    } else {
-      if (session) {
-        session.textContent = "25:00"
-      }
-      pomodoro?.classList.add("bg__color")
-      longBreak?.classList.remove("bg__color")
-      shortBreak?.classList.remove("bg__color")
+  else if (target.dataset.id?.includes("long__break")) {
+    if (session) {
+      session.textContent = "15:00"
     }
+    longBreak?.classList.add("bg__color")
+    shortBreak?.classList.remove("bg__color")
+    pomodoro?.classList.remove("bg__color")
+  } else {
+    if (session) {
+      session.textContent = "25:00"
+    }
+    pomodoro?.classList.add("bg__color")
+    longBreak?.classList.remove("bg__color")
+    shortBreak?.classList.remove("bg__color")
+  }
 }
 
 
