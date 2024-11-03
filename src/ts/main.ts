@@ -65,9 +65,11 @@ function updateCountDown() {
 
 
 startBtn?.addEventListener("click", () => {
-  start()
-  startBtn.classList.add("block-btn");
-  pauseBtn?.classList.remove("block-btn");
+  if(!isRunning) {
+    start();
+    pauseBtn?.classList.remove("block-btn");
+    startBtn?.classList.add("block-btn")
+  }
 })
 
 pauseBtn?.addEventListener("click", () => {
@@ -80,9 +82,16 @@ pauseBtn?.addEventListener("click", () => {
 buttons?.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const target = e.currentTarget as HTMLElement;
+    if (target) {
+      stop();
+      pauseBtn?.classList.add("block-btn")
+      startBtn?.classList.remove("block-btn")
     selectSession(target)
+    }
+    // stop() // fix the bug when i click on start button and then i click again to go to suppose a short brake or long break , it was starting from the previous session but now it's stopped and start from new session instead of old session
   });
 });
+
 
 
 settingsIcon?.addEventListener("click", () => {
